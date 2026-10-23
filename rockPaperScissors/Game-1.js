@@ -5,7 +5,10 @@ console.log("Let's play Rock, Paper, Scissors!");
 const playerInput = prompt('Type in "rock", "paper" or "scissors":');
 console.log(`Player chose ${playerInput}!`);
 
-
+if(playerInput !== "rock" || playerInput !== "scissors" || playerInput !== "paper"){
+    console.log("Input must be rock, paper or scissors")
+}
+else{
 const elements = ["rock", "paper", "scissors"]
 
 const computerInput = elements[Math.floor(Math.random()*elements.length)];
@@ -26,3 +29,4 @@ if (playerInput == computerInput) {
 } else if (computerInput == "scissors" && playerInput == "paper") {
     console.log("Computer wins!");
 } 
+}
