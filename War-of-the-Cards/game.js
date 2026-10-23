@@ -86,21 +86,6 @@ function shuffle(deck) {
 
 let shuffledDeck = shuffle(myDeck)
 
-// const deal = (deck) => {
-//     let playerHand = []
-//     let compuerHand = []
-
-//     for (let i = 0; i < deck.length; i++) {
-//         if (i % 2 == 1) {
-//             playerHand.push(deck[i])
-//         }
-//         else {
-//             compuerHand.push(deck[i])
-//         }
-//     }
-//     return playerHand, computerHand
-// }
-
 const dealCardToPlayer = (deck) => {
     let playerHand = []
     for (let i = 0; i < deck.length; i++) {
@@ -125,4 +110,30 @@ const dealCardToComputer = (deck) => {
 
 let actualComputerHand = dealCardToComputer(shuffledDeck)
 
+const playerDrawACard = (arr) => {
+    return `Player's card is: ${arr[0].Value} of ${arr[0].Suit}`;
+}
+
+const computerDrawACard = (arr) => {
+    return `Computer's card is: ${arr[0].Value} of ${arr[0].Suit}`;
+}
+
+console.log(playerDrawACard(actualPlayerHand));
+console.log(computerDrawACard(actualComputerHand));
+
+if (actualPlayerHand[0].value > actualComputerHand[0]) {
+    actualPlayerHand.push(actualPlayerHand[0] + actualComputerHand[0])
+}
+
+if (actualPlayerHand[0].value < actualComputerHand[0]) {
+    actualComputerHand.push(actualPlayerHand[0] + actualComputerHand[0])
+}
+
+if (actualPlayerHand[0].value == actualComputerHand[0]) {
+    actualComputerHand.push(actualPlayerHand[0] + actualComputerHand[0])
+}
+
+
+
+// console.log(`Computer's card is: ${actualComputerHand[0]}`);
 
