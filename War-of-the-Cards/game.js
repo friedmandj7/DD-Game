@@ -70,8 +70,6 @@ function getDeck() {
 
 let myDeck = getDeck()
 
-console.log(myDeck);
-
 function shuffle(deck) {
     // for 1000 turns
     // switch the values of two random cards
@@ -83,15 +81,10 @@ function shuffle(deck) {
         deck[location1] = deck[location2];
         deck[location2] = tmp;
     }
-
+    return deck
 }
 
-
-
-
-
-
-
+let shuffledDeck = shuffle(myDeck)
 
 // randomly split deck in 2 and shuffle order
 
