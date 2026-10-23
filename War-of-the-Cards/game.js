@@ -86,51 +86,43 @@ function shuffle(deck) {
 
 let shuffledDeck = shuffle(myDeck)
 
-// randomly split deck in 2 and shuffle order
+// const deal = (deck) => {
+//     let playerHand = []
+//     let compuerHand = []
 
-
-// for(let i=0; i< deckOfCards.length; i++){
-//    let randomCard = deckOfCards[Math.floor(Math.random()*deckOfCards.length)]
-//     shuffledDeck.push(randomCard)
+//     for (let i = 0; i < deck.length; i++) {
+//         if (i % 2 == 1) {
+//             playerHand.push(deck[i])
+//         }
+//         else {
+//             compuerHand.push(deck[i])
+//         }
+//     }
+//     return playerHand, computerHand
 // }
 
-// const shuffle = (deckOfCards) => {
-
-
-// return shuffledDeck
-// }
-
-
-const deal = (shuffle) => {
-
-
+const dealCardToPlayer = (deck) => {
     let playerHand = []
-    let compuerHand = []
-
-    for (let i = 0; i < shuffle.length; i++) {
+    for (let i = 0; i < deck.length; i++) {
         if (i % 2 == 1) {
-            playerHand.push(shuffle[i])
-        }
-        else {
-            compuerHand.push(shuffle[i])
+            playerHand.push(deck[i])
         }
     }
-    return playerHand + compuerHand
+    return playerHand
 }
 
+let actualPlayerHand = dealCardToPlayer(shuffledDeck)
 
+const dealCardToComputer = (deck) => {
+    let computerHand = []
+    for (let i = 0; i < deck.length; i++) {
+        if (i % 2 == 0) {
+            computerHand.push(deck[i])
+        }
+    }
+    return computerHand
+}
 
-
-// const elements = ["rock", "paper", "scissors"]
-
-// const computerInput = elements[Math.floor(Math.random()*elements.length)];
-// console.log(`Computer chose ${computerInput}`);
-
-
-
-// player and computer draw top card
-
-
-// compare card values, include if statements to show higher card gets both and if statement for when someone runs out of cards
+let actualComputerHand = dealCardToComputer(shuffledDeck)
 
 
