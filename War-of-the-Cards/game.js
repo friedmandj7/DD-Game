@@ -1,6 +1,6 @@
 // craete deck of cards and player hands 
 
-const deckOfCards = [
+let deckOfCards = [
     {suit: "diamond", rank: "1" },
     {suit: "diamond", rank: "2"}, 
     {suit: "diamond", rank: "3" },
@@ -55,11 +55,72 @@ const deckOfCards = [
     {suit: "hearts", rank: "13"},
 ]
 
-let playerHand = []
-let compuerHand = []
+
+function shuffle(deck)
+{
+	// for 1000 turns
+	// switch the values of two random cards
+	for (let i = 0; i < 1000; i++)
+	{
+		let location1 = Math.floor((Math.random() * deck.length));
+		let location2 = Math.floor((Math.random() * deck.length));
+		let tmp = deck[location1];
+
+		deck[location1] = deck[location2];
+		deck[location2] = tmp;
+	}
+        
+}
+
+console.log(deck)
+
+
+
+
+
+
 
 
 // randomly split deck in 2 and shuffle order
+
+
+    // for(let i=0; i< deckOfCards.length; i++){
+    //    let randomCard = deckOfCards[Math.floor(Math.random()*deckOfCards.length)]
+    //     shuffledDeck.push(randomCard)
+    // }
+
+// const shuffle = (deckOfCards) => {
+
+
+// return shuffledDeck
+// }
+
+
+const deal = (shuffle) => {
+
+
+let playerHand = []
+let compuerHand = []
+
+    for(let i=0; i< shuffle.length; i++){
+        if(i % 2 == 1){
+            playerHand.push(shuffle[i])
+        }
+        else {
+            compuerHand.push(shuffle[i])
+        }
+    }
+    return playerHand + compuerHand
+}
+
+
+
+
+// const elements = ["rock", "paper", "scissors"]
+
+// const computerInput = elements[Math.floor(Math.random()*elements.length)];
+// console.log(`Computer chose ${computerInput}`);
+
 
 
 // player and computer draw top card
