@@ -121,16 +121,21 @@ const computerDrawACard = (arr) => {
 console.log(playerDrawACard(actualPlayerHand));
 console.log(computerDrawACard(actualComputerHand));
 
+let draw = []
+
 if (actualPlayerHand[0].value > actualComputerHand[0]) {
-    actualPlayerHand.push(actualPlayerHand[0] + actualComputerHand[0])
+    actualPlayerHand.push(actualPlayerHand[0] + actualComputerHand[0] + draw)
+    console.log("Player wins, you get the cards!")
 }
 
 if (actualPlayerHand[0].value < actualComputerHand[0]) {
-    actualComputerHand.push(actualPlayerHand[0] + actualComputerHand[0])
+    actualComputerHand.push(actualPlayerHand[0] + actualComputerHand[0] + draw)
+    console.log("Computer wins, it gets the cards!")
 }
 
 if (actualPlayerHand[0].value == actualComputerHand[0]) {
-    actualComputerHand.push(actualPlayerHand[0] + actualComputerHand[0])
+    draw.push(actualPlayerHand[0] + actualComputerHand[0])
+    console.log("Its a draw! Next winner gets the lot!")
 }
 
 
